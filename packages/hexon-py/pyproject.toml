@@ -1,0 +1,40 @@
+[tool.coverage.run]
+branch = true
+source = ["hexon"]
+
+[tool.coverage.report]
+exclude_lines = [
+    'if TYPE_CHECKING:',
+    'def __repr__',      # Exclude all __repr__ methods from coverage
+]
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = """
+    --cov
+    --cov-fail-under=90
+    --cov-report term
+    --cov-report html:'../../coverage/packages/hexon-py/html'
+    --cov-report xml:'../../coverage/packages/hexon-py/coverage.xml'
+    --html='../../reports/packages/hexon-py/unittests/html/index.html'
+    --junitxml='../../reports/packages/hexon-py/unittests/junit.xml'
+"""
+
+[tool.poetry]
+name = "hexon-py"
+version = "1.0.0"
+description = "A powerful backend library with features for clean architecture and domain-driven design"
+authors = []
+license = 'MIT'
+readme = 'README.md'
+
+[[tool.poetry.packages]]
+include = "hexon"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+colorama = "^0.4.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

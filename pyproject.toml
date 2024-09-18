@@ -1,0 +1,30 @@
+[tool.nx]
+autoActivate = true
+
+[tool.poetry]
+name = "@hexon/source"
+version = "1.0.0"
+description = "Hexon is a powerful backend library with features for clean architecture and domain-driven design"
+authors = []
+license = "Proprietary"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+
+[tool.poetry.dependencies.hexon-py]
+path = "packages/hexon-py"
+develop = true
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "6.0.0"
+autopep8 = "2.0.2"
+pytest = "7.3.1"
+pytest-sugar = "0.9.7"
+pytest-cov = "4.1.0"
+pytest-html = "3.2.0"
+mypy = "^1.11.2"
+
+[build-system]
+requires = ["poetry-core==1.1.0"]
+build-backend = "poetry.core.masonry.api"

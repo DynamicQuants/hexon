@@ -34,6 +34,7 @@
         "targetName": "test"
       },
       "exclude": ["apps/hexon-e2e/**/*"]
-    }
+    },
+    "@nxlv/python"
   ]
 }
