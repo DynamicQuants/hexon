@@ -1,0 +1,12 @@
+{
+  "extends": "@dynamic-quants/config-tools/tsconfig/nestjs.lib.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["jest.config.ts", "tests/**/*.ts"]
+}

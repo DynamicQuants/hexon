@@ -1,8 +1,25 @@
-# ################################################################################################
-# Miscelaneous
-# ################################################################################################
+# Compiled output.
+/dist
+/node_modules
+/build
 
-# IDEs and editors
+# Logs.
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS.
+.DS_Store
+
+# Tests.
+/coverage
+/.nyc_output
+
+# IDEs and editors.
 /.idea
 .project
 .classpath
@@ -11,94 +28,33 @@
 .settings/
 *.sublime-workspace
 
-# IDE - VSCode
+# IDE - VSCode.
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-/.sass-cache
-/connect.lock
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
-.DS_Store
-Thumbs.db
-
-# Lint reports
-reports
-
-# Code coverage
-/coverage
-.coverage
-
-# Env files
+# dotenv environment variable files.
 .env
-.env.*
-!.env.example
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
-# ################################################################################################
-# Node.js
-# ################################################################################################
+# Temporary directory.
+.temp
+.tmp
 
-# compiled output
-dist
-tmp
-/out-tsc
+# Runtime data.
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# dependencies
-node_modules
+# Diagnostic reports (https://nodejs.org/api/report.html).
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# Next.js
-.next
-out
-
-# ################################################################################################
-# Nx
-# ################################################################################################
-
-.nx/cache
-.nx/workspace-data
-
-# ################################################################################################
-# Python
-# ################################################################################################
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-
-# Pytest
-.cache/
-.pytest_cache/
-
-# Virtual Environments
-.venv/
-
-# MyPy
-.mypy_cache/
-
-# Jupiter Notebooks
-*.ipynb
-
-# Some internal files
-**/main.py
+# Moonrepo Cache
+.moon/cache
+.moon/docker

@@ -1,15 +1,12 @@
 {
   "recommendations": [
-    "nrwl.angular-console",
-    "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner",
+    "karunamurti.tera",
+    "dbaeumer.vscode-eslint",
     "tamasfe.even-better-toml",
-    "ms-python.black-formatter",
-    "ms-python.flake8",
-    "ms-python.isort",
-    "ms-python.mypy-type-checker",
-    "ms-python.python",
-    "ms-python.debugpy",
-    "ms-python.vscode-pylance"
+    "github.vscode-pull-request-github",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss",
+    "moonrepo.moon-console"
   ]
 }

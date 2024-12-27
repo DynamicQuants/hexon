@@ -1,5 +1,8 @@
-import { getJestProjectsAsync } from '@nx/jest';
+import { jestNestjsLib } from '@dynamic-quants/config-tools/jest';
+import type { Config } from 'jest';
 
-export default async () => ({
-  projects: await getJestProjectsAsync(),
-});
+export default {
+  ...jestNestjsLib,
+  displayName: '@dynamic-quants/hexon',
+  transformIgnorePatterns: ['node_modules/(?!(nanoid))/'],
+} as Config;
