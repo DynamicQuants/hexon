@@ -1,11 +1,10 @@
 {
   "name": "@dynamic-quants/hexon",
   "description": "Hexon is a powerful backend library with features for clean architecture and domain-driven design",
-  "version": "1.0.0",
-  "private": false,
+  "version": "0.1.0",
   "type": "commonjs",
   "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
+  "types": "./src/index.d.ts",
   "scripts": {
     "clean": "rimraf dist",
     "copy": "copyfiles -f README.md package.json dist",
@@ -29,7 +28,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "latest",
+    "@changesets/cli": "^2.27.11",
+    "@dynamic-quants/config-tools": "^3.0.18",
     "@nestjs/cli": "^10.4.8",
     "@nestjs/schematics": "^10.2.3",
     "@nestjs/testing": "^10.4.12",
@@ -50,7 +50,7 @@
     "target": "nestjs",
     "type": "lib"
   },
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.2",
   "engines": {
     "node": "20.18.0"
   }
