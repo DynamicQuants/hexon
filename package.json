@@ -49,5 +49,9 @@
   "config-tools": {
     "target": "nestjs",
     "type": "lib"
+  },
+  "packageManager": "pnpm@9.15.2",
+  "engines": {
+    "node": "^20.18.1"
   }
 }
