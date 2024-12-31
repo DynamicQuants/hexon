@@ -9,3 +9,4 @@ node:
   dedupeOnLockfileChange: true
   dependencyVersionFormat: 'workspace'
   syncProjectWorkspaceDependencies: true
+  syncVersionManagerConfig: 'nvm'
