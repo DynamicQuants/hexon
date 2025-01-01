@@ -18,5 +18,6 @@ jobs:
       pull-requests: write
       contents: write
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-toolchain
       - run: moon ci :build
