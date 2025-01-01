@@ -1,0 +1,14 @@
+name: Setup Toolchain
+description: Setup the toolchain for the project using Moonrepo and Prototools
+
+runs:
+  using: 'composite'
+  name: Setup Toolchain
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: moonrepo/setup-toolchain@v0
+      with:
+        auto-install: true
