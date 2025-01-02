@@ -18,9 +18,9 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-toolchain
+      - uses: ./.github/actions/moon
+        name: 🌙 Setup Moon and build the project
         with:
           moon-version: '1.30.5'
-          prototools-version: '0.43.2'
-      - run: moon ci :build
+          proto-version: '0.44.2'
+          command: 'moon ci :build && ls -la'

@@ -11,8 +11,8 @@ runner:
   archivableTargets:
     - ':build'
     - ':lint-check'
-    - ':test'
     - ':format-check'
+    - ':test'
   logRunningCommand: true
 
 generator:
