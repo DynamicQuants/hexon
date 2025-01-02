@@ -18,13 +18,19 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      - uses: actions/checkout@v4
-        name: 🔄 Checkout the repository
+      - name: 🔄 Checkout the repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: DynamicQuants/actions/moon@main
-        name: 🌙 Setup Moon and build the project
-        with:
-          moon-version: '1.30.5'
-          proto-version: '0.44.2'
-          command: 'moon ci :build && ls -la'
+      - name: 🌙 Setup Moonrepo and Prototools
+        uses: DynamicQuants/actions/moon@main
+      - name: 🔖 Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - name: 📦 Create Release Pull Request
+        uses: changesets/action@v1
+        env:
+          commit: '🔧 chore: update versions'
+          title: '🔧 chore: update versions'
+          version: 'moon ci :version'
+          publish: 'moon ci :publish'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

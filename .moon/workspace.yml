@@ -13,6 +13,8 @@ runner:
     - ':lint-check'
     - ':format-check'
     - ':test'
+    - ':publish'
+    - ':version'
   logRunningCommand: true
 
 generator:

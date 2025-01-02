@@ -17,8 +17,31 @@ fileGroups:
     - 'tests/**/*'
     - 'jest.config.ts'
     - 'tsconfig.spec.json'
+  dist:
+    - 'dist/**/*'
+  changeset:
+    - '.changeset/**/*'
 
 tasks:
+  # Publishes the library to npm.
+  publish:
+    command: 'cd dist && pnpm publish --no-git-checks --tag latest'
+    description: 'Publishes the library to npm'
+    type: run
+    inputs:
+      - '@group(dist)'
+    deps:
+      - 'build'
+
+  # Versioning the library.
+  version:
+    command: 'pnpm changeset version'
+    description: 'Versioning the library using changesets'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(changeset)'
+
   # Builds the library.
   build:
     command: 'pnpm build'
@@ -27,11 +50,12 @@ tasks:
     inputs:
       - '@group(src)'
     outputs:
-      - 'dist/**/*'
+      - '@group(dist)'
     deps:
       - 'lint-check'
       - 'format-check'
       - 'test'
+      - 'version'
 
   # Checks code quality using ESLint (fixable).
   lint:
