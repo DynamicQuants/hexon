@@ -55,7 +55,6 @@ tasks:
       - 'lint-check'
       - 'format-check'
       - 'test'
-      - 'version'
 
   # Checks code quality using ESLint (fixable).
   lint:
