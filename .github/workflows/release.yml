@@ -18,6 +18,9 @@ jobs:
       pull-requests: write
       contents: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: ./.github/actions/moon
         name: 🌙 Setup Moon and build the project
         with:
