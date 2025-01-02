@@ -19,9 +19,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        name: 🔄 Checkout the repository
         with:
           fetch-depth: 0
-      - uses: ./.github/actions/moon
+      - uses: DynamicQuants/actions/moon@main
         name: 🌙 Setup Moon and build the project
         with:
           moon-version: '1.30.5'
