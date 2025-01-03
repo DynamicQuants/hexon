@@ -16,8 +16,6 @@ jobs:
     if: github.event.pull_request.merged && contains(github.event.pull_request.title, 'update version') && github.event.pull_request.user.name == 'github-actions[bot]'
     name: Publish
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: 🔄 Checkout the repository
         uses: actions/checkout@v4
@@ -25,3 +23,5 @@ jobs:
         uses: DynamicQuants/actions/moonrepo@main
       - name: 📦 Release and Publish
         uses: DynamicQuants/actions/changeset/publish@main
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

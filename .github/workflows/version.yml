@@ -28,3 +28,5 @@ jobs:
         run: 'moon ci :test :lint :format'
       - name: 📦 Create Release Pull Request
         uses: DynamicQuants/actions/changeset/version@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
