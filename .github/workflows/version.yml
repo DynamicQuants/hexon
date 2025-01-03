@@ -24,9 +24,7 @@ jobs:
           fetch-depth: 0
       - name: 🌙 Setup Moonrepo and Prototools
         uses: DynamicQuants/actions/moonrepo@main
-      - name: Running CI tasks
-        run: 'moon ci :test :lint :format'
-      - name: 📦 Create Release Pull Request
+      - name: 📦 Create Version Pull Request
         uses: DynamicQuants/actions/changeset/version@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

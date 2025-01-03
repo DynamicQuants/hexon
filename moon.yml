@@ -41,6 +41,8 @@ tasks:
     inputs:
       - '@group(src)'
       - '@group(changeset)'
+    deps:
+      - 'build'
 
   # Builds the library.
   build:

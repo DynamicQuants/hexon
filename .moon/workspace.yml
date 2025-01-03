@@ -7,16 +7,6 @@ vcs:
   manager: 'git'
   defaultBranch: 'main'
 
-runner:
-  archivableTargets:
-    - ':build'
-    - ':lint-check'
-    - ':format-check'
-    - ':test'
-    - ':publish'
-    - ':version'
-  logRunningCommand: true
-
 generator:
   templates:
     - 'git://github.com/DynamicQuants/moonrepo-templates/templates#main'
