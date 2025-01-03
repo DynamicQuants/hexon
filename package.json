@@ -1,14 +1,11 @@
 {
   "name": "@dynamic-quants/hexon",
   "description": "Hexon is a powerful backend library with features for clean architecture and domain-driven design",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "commonjs",
   "files": [
-    "dist/**/**",
-    "!**/*.tsbuildinfo",
-    "LICENSE",
-    "README.md",
-    "package.json"
+    "dist",
+    "!**/*.tsbuildinfo"
   ],
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

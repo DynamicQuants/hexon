@@ -1,0 +1,27 @@
+name: Release and Publish
+
+on:
+  pull_request:
+    branches:
+      - main
+      - next
+      - alpha
+      - beta
+    types: [closed]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  publish:
+    if: github.event.pull_request.merged && contains(github.event.pull_request.title, 'update version') && github.event.pull_request.user.name == 'github-actions[bot]'
+    name: Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 🔄 Checkout the repository
+        uses: actions/checkout@v4
+      - name: 🌙 Setup Moonrepo and Prototools
+        uses: DynamicQuants/actions/moonrepo@main
+      - name: 📦 Release and Publish
+        uses: DynamicQuants/actions/changeset/publish@main

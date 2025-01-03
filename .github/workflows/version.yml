@@ -1,4 +1,4 @@
-name: Release
+name: Version
 
 on:
   push:
@@ -23,15 +23,8 @@ jobs:
         with:
           fetch-depth: 0
       - name: 🌙 Setup Moonrepo and Prototools
-        uses: DynamicQuants/actions/moon@main
+        uses: DynamicQuants/actions/moonrepo@main
+      - name: Running CI tasks
+        run: 'moon ci :test :lint :format'
       - name: 📦 Create Release Pull Request
-        uses: changesets/action@v1
-        id: changesets
-        with:
-          commit: '🔧 chore: update version'
-          title: '🔧 chore: update version'
-          version: 'moon ci :version'
-          publish: 'moon ci :publish'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        uses: DynamicQuants/actions/changeset/version@main
