@@ -25,7 +25,7 @@ fileGroups:
 tasks:
   # Publishes the library to npm.
   publish:
-    command: 'cd dist && pnpm changeset publish'
+    command: 'pnpm changeset publish'
     description: 'Publishes the library to npm using changesets'
     type: run
     inputs:
