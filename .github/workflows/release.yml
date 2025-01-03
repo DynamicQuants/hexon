@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - alpha
+      - beta
+      - next
+      - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -32,12 +35,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: 🔖 Create tag
-        uses: rickstaa/action-create-tag@v1
-        if: steps.changesets.outcome == 'success' && steps.changesets.outputs.published == 'true'
-        with:
-          tag: '${{ fromJson(steps.changesets.outputs.publishedPackages)[0].version }}'
-          tag_exists_error: false
-          message: 'Release ${tag}'
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
