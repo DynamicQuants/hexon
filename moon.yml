@@ -25,8 +25,8 @@ fileGroups:
 tasks:
   # Publishes the library to npm.
   publish:
-    command: 'cd dist && pnpm publish --no-git-checks --tag latest'
-    description: 'Publishes the library to npm'
+    command: 'pnpm changeset publish'
+    description: 'Publishes the library to npm using changesets'
     type: run
     inputs:
       - '@group(dist)'
